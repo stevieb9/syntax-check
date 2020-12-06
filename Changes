@@ -1,7 +1,7 @@
 Revision history for Syntax-Check
 
-1.00 UNREL
-        -
+1.00    2020-12-06
+        - Modifications to error output
 
 0.01    2020-12-06
         First version, released on an unsuspecting world.
