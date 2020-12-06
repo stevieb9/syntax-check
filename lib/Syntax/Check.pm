@@ -10,7 +10,7 @@ use File::Path qw(make_path);
 use File::Temp qw(tempdir);
 use PPI;
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 sub new {
     my ($class, %p) = @_;
