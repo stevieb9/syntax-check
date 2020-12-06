@@ -1,5 +1,9 @@
 Revision history for Syntax-Check
 
+1.01    2020-12-06
+        - Fix broken POD link
+        - Remove debugging statements
+
 1.00    2020-12-06
         - Modifications to error output
 
