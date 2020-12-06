@@ -4,10 +4,12 @@ use warnings;
 use strict;
 use feature 'say';
 
-use Carp qw(croak);
+use Carp qw(croak confess);
+use Data::Dumper;
 use Exporter qw(import);
 use File::Path qw(make_path);
 use File::Temp qw(tempdir);
+use Module::Installed::Tiny qw(module_installed);
 use PPI;
 
 our $VERSION = '1.02';
@@ -41,13 +43,14 @@ sub check {
             next;
         }
 
+        next if $module eq 'Carp';
         $module =~ s|::|/|g;
         if (my ($dir, $file) = $module =~ m|^(.*)/(.*)$|) {
             $file .= '.pm';
             my $path = "$dir/$file";
 
-            if (exists $INC{$path}) {
-                # Skip includes that are actually available
+            if (module_installed($package)) {
+                # Skip includes that are actually installed
                 say "Skipping available module '$package'" if $self->{verbose};
                 next;
             }
@@ -81,7 +84,13 @@ sub check {
         }
     }
 
-    `perl -I$self->{lib} -c $self->{file}`;
+
+    if (! $self->{lib}) {
+        `perl -c $self->{file}`;
+    }
+    else {
+        `perl -I$self->{lib} -c $self->{file}`;
+    }
 }
 sub _create_lib_dir {
     my ($self) = @_;
