@@ -1,7 +1,7 @@
 Revision history for Syntax-Check
 
 1.02 UNREL
-        -
+        - Cleaned up POD, and added POD in the binary file
 
 1.01    2020-12-06
         - Fix broken POD link

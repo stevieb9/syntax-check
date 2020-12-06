@@ -115,7 +115,7 @@ file are not available to the file.
 
 Binary:
 
-    ./syncheck [--verbose] [--keep] perl_filename.ext
+    syncheck [--verbose] [--keep] perl_filename.ext
 
 Library:
 
@@ -129,7 +129,7 @@ Installed with this library is a binary application that uses the library.
 
 Usage:
 
-    ./syncheck [-k] [-v] perl_file_name.ext
+    syncheck [-k] [-v] perl_file_name.ext
 
 =head2 --keep|-k
 
@@ -140,6 +140,10 @@ temp dir. By default we delete this directory upon program completion.
 
 Supply this argument to get verbose output.
 
+=head2 perl_file.ext
+
+This argument is mandatory, and must follow all others. It's the file you want
+to perform syntax checking on.
 
 =head1 METHODS
 
