@@ -22,7 +22,7 @@ if (! @ARGV || ! -f $ARGV[0]) {
 }
 
 if ($help) {
-    say "\nUSAGE: ./syntax_check [-v|--verbose] [-k|--keep] perl_filename.ext\n";
+    say "\nUSAGE: ./syncheck [-v|--verbose] [-k|--keep] perl_filename.ext\n";
 }
 
 Syntax::Check->new(

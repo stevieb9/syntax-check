@@ -14,7 +14,7 @@ BEGIN {
 my $t;
 my $m = 'Syntax::Check';
 my $f = 't/data/test.pl';
-my $b = 'bin/syntax_check';
+my $b = 'bin/syncheck';
 
 # fail no file
 {

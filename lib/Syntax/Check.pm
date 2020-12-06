@@ -103,7 +103,7 @@ Syntax::Check - Wraps 'perl -c' so it works even if modules are unavailable
 
 =for html
 <a href="http://travis-ci.org/stevieb9/mock-sub"><img src="https://secure.travis-ci.org/stevieb9/syntax-check.png"/>
-<a href='https://coveralls.io/github/stevieb9/syntax_check?branch=master'><img src='https://coveralls.io/repos/stevieb9/syntax-check/badge.svg?branch=master&service=github' al$
+<a href='https://coveralls.io/github/stevieb9/syntax-check?branch=master'><img src='https://coveralls.io/repos/stevieb9/syntax-check/badge.svg?branch=master&service=github' al$
 
 =head1 DESCRIPTION
 
@@ -115,7 +115,7 @@ file are not available to the file.
 
 Binary:
 
-    ./syntax_check [--verbose] [--keep] perl_filename.ext
+    ./syncheck [--verbose] [--keep] perl_filename.ext
 
 Library:
 
@@ -123,13 +123,13 @@ Library:
 
     Syntax::Check->new(%opts, $filename)->check;
 
-=head1 BINARY PROGRAM syntax_check
+=head1 BINARY PROGRAM syncheck
 
 Installed with this library is a binary application that uses the library.
 
 Usage:
 
-    ./syntax_check [-k] [-v] perl_file_name.ext
+    ./syncheck [-k] [-v] perl_file_name.ext
 
 =head2 --keep|-k
 
