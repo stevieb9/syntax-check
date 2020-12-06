@@ -42,7 +42,6 @@ sub check {
         }
 
         $module =~ s|::|/|g;
-        say "******** $module\n";
         if (my ($dir, $file) = $module =~ m|^(.*)/(.*)$|) {
             $file .= '.pm';
             my $path = "$dir/$file";
@@ -103,7 +102,8 @@ Syntax::Check - Wraps 'perl -c' so it works even if modules are unavailable
 
 =for html
 <a href="http://travis-ci.org/stevieb9/mock-sub"><img src="https://secure.travis-ci.org/stevieb9/syntax-check.png"/>
-<a href='https://coveralls.io/github/stevieb9/syntax-check?branch=master'><img src='https://coveralls.io/repos/stevieb9/syntax-check/badge.svg?branch=master&service=github' al$
+<a href='https://coveralls.io/github/stevieb9/syntax-check?branch=master'><img src='https://coveralls.io/repos/stevieb9/syntax-check/badge.svg?branch=master&service=github' alt='Coverage Status' /></a>
+
 
 =head1 DESCRIPTION
 
