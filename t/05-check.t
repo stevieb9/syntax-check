@@ -173,8 +173,4 @@ my $b = 'bin/syncheck';
     }
 }
 
-# help
-{
-
-}
 done_testing;
