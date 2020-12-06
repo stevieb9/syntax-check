@@ -45,6 +45,7 @@ sub check {
 
         next if $module eq 'Carp';
         $module =~ s|::|/|g;
+
         if (my ($dir, $file) = $module =~ m|^(.*)/(.*)$|) {
             $file .= '.pm';
             my $path = "$dir/$file";
