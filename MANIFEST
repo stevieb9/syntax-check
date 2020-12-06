@@ -1,4 +1,4 @@
-bin/syntax_check
+bin/syncheck
 Changes
 lib/Syntax/Check.pm
 Makefile.PL
