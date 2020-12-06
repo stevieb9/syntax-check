@@ -117,6 +117,7 @@ my $b = 'bin/syncheck';
 
             like $err, qr/syntax OK/, "bin: -v success ok";
             like $out, qr/pragma/, "bin: -v success prints pragma ok";
+            like $out, qr/File::Path/, "bin: -v success prints available modules ok";
 
             if ($out =~ /Created temp lib dir '(.*)'/) {
                 is -d $1, undef, "bin: --verbose w/o keep temp dir removed ok";
@@ -164,6 +165,16 @@ my $b = 'bin/syncheck';
             is -d $1, undef, "bin: --keep temp dir removed ok";
         }
     }
+
+    # help
+    {
+        like `perl $b -h`, qr/USAGE/, "help displayed with -h ok";
+        like `perl $b --help`, qr/USAGE/, "help displayed with --help ok";
+    }
 }
 
+# help
+{
+
+}
 done_testing;

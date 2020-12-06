@@ -24,7 +24,6 @@ if ($help) {
 
 if (! @ARGV || ! -f $ARGV[0]) {
     die "Program needs a file name as its last argument...\n";
-    exit;
 }
 
 Syntax::Check->new(

@@ -2,6 +2,9 @@ Revision history for Syntax-Check
 
 1.02 UNREL
         - Cleaned up POD, and added POD in the binary file
+        - Update tests to cover case where loaded module is skipped
+        - Added tests for -h|--help
+        - Removed erroneous exit() in binary
 
 1.01    2020-12-06
         - Fix broken POD link
