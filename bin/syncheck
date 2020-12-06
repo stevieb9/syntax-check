@@ -17,12 +17,14 @@ GetOptions (
     "help"      => \$help,
 );
 
-if (! @ARGV || ! -f $ARGV[0]) {
-    die "Program needs a file name as its last argument...";
-}
-
 if ($help) {
     say "\nUSAGE: ./syncheck [-v|--verbose] [-k|--keep] perl_filename.ext\n";
+    exit;
+}
+
+if (! @ARGV || ! -f $ARGV[0]) {
+    die "Program needs a file name as its last argument...\n";
+    exit;
 }
 
 Syntax::Check->new(
