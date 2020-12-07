@@ -117,43 +117,25 @@ Syntax::Check - Wraps 'perl -c' so it works even if modules are unavailable
 
 =head1 DESCRIPTION
 
+There is a binary already available upon install of this distribution. Please
+see L<syncheck|https://metacpan.org/pod/distribution/Syntax-Check/bin/syncheck>
+for details.
+
 This module is a wrapper around C<perl -c> for situations where you're trying
 to do a syntax check on a Perl file, but the libraries that are C<use>d by the
 file are not available to the file.
 
 =head1 SYNOPSIS
 
-Binary:
-
-    syncheck [--verbose] [--keep] perl_filename.ext
-
-Library:
-
     use Syntax::Check;
 
+    my $syn = Syntax::Check->new(%opts, $filename);
+
+    $syn->check;
+
+    # or just...
+
     Syntax::Check->new(%opts, $filename)->check;
-
-=head1 BINARY PROGRAM syncheck
-
-Installed with this library is a binary application that uses the library.
-
-Usage:
-
-    syncheck [-k] [-v] perl_file_name.ext
-
-=head2 --keep|-k
-
-If supplied, we will keep the temporary library directory structure in your
-temp dir. By default we delete this directory upon program completion.
-
-=head2 --verbose|-v
-
-Supply this argument to get verbose output.
-
-=head2 perl_file.ext
-
-This argument is mandatory, and must follow all others. It's the file you want
-to perform syntax checking on.
 
 =head1 METHODS
 
