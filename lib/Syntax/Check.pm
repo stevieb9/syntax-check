@@ -12,7 +12,7 @@ use File::Temp qw(tempdir);
 use Module::Installed::Tiny qw(module_installed);
 use PPI;
 
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 sub new {
     my ($class, %p) = @_;

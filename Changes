@@ -1,5 +1,8 @@
 Revision history for Syntax-Check
 
+1.04 UNREL
+        -
+
 1.03    2020-12-07
         - Added Capture::Tiny to test prereqs (CPAN installs were failing)
 
