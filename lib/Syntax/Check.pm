@@ -9,10 +9,21 @@ use Data::Dumper;
 use Exporter qw(import);
 use File::Path qw(make_path);
 use File::Temp qw(tempdir);
-use Module::Installed::Tiny qw(module_installed);
 use PPI;
 
 our $VERSION = '1.04';
+
+my $SEPARATOR;
+
+BEGIN {
+    if ($^O =~ /^(dos|os2)/i) {
+        $SEPARATOR = '\\';
+    } elsif ($^O =~ /^MacOS/i) {
+        $SEPARATOR = ':';
+    } else {
+        $SEPARATOR = '/';
+    }
+}
 
 sub new {
     my ($class, %p) = @_;
@@ -43,14 +54,15 @@ sub check {
             next;
         }
 
-        next if $module eq 'Carp';
+        next if $module =~ /^Carp/;
+
         $module =~ s|::|/|g;
 
         if (my ($dir, $file) = $module =~ m|^(.*)/(.*)$|) {
             $file .= '.pm';
             my $path = "$dir/$file";
 
-            if (module_installed($package)) {
+            if (_module_installed($package)) {
                 # Skip includes that are actually installed
                 say "Skipping available module '$package'" if $self->{verbose};
                 next;
@@ -85,7 +97,6 @@ sub check {
         }
     }
 
-
     if (! $self->{lib}) {
         `perl -c $self->{file}`;
     }
@@ -100,6 +111,19 @@ sub _create_lib_dir {
         $self->{lib} = tempdir(CLEANUP => $self->{cleanup});
         say "Created temp lib dir '$self->{lib}'" if $self->{verbose};
     }
+}
+sub _module_installed {
+    my ($name) = @_;
+
+    my $name_pm;
+
+    if ($name =~ /\A\w+(?:::\w+)*\z/) {
+        ($name_pm = "$name.pm") =~ s!::!$SEPARATOR!g;
+    } else {
+        $name_pm = $name;
+    }
+
+    return 1 if exists $INC{$name_pm};
 }
 sub __placeholder {}
 

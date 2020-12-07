@@ -37,7 +37,6 @@ WriteMakefile(
         'File::Path'              => 0,
         'File::Temp'              => 0,
         'PPI'                     => 0,
-        'Module::Installed::Tiny' => 0,
     },
     dist  => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean => { FILES => 'Syntax-Check-*' },
