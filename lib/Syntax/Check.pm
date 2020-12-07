@@ -11,7 +11,7 @@ use File::Path qw(make_path);
 use File::Temp qw(tempdir);
 use PPI;
 
-our $VERSION = '1.04';
+our $VERSION = '1.05';
 
 my $SEPARATOR;
 
