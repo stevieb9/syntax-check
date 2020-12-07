@@ -1,7 +1,7 @@
 Revision history for Syntax-Check
 
-1.03 UNREL
-        -
+1.03    2020-12-07
+        - Added Capture::Tiny to test prereqs (CPAN installs were failing)
 
 1.02    2020-12-06
         - Cleaned up POD, and added POD in the binary file
