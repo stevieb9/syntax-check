@@ -1,6 +1,6 @@
 Revision history for Syntax-Check
 
-1.05 UNREL
+1.05    2020-12-15
         - Update tests so they use $^X instead of calling perl, as the system
           perl was being used which has mismatched dependencies when running
           on CPAN testers (fixes #1)
