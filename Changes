@@ -5,6 +5,7 @@ Revision history for Syntax-Check
           perl was being used which has mismatched dependencies when running
           on CPAN testers (fixes #1)
         - Added dependency of Module::Installed
+        - Converted over to use Travis-CI.com from .org
 
 1.04    2020-12-07
         - Removed prereq of Module::Installed::Tiny, as the dependency chain

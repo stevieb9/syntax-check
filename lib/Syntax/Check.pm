@@ -123,7 +123,7 @@ __END__
 Syntax::Check - Wraps 'perl -c' so it works even if modules are unavailable
 
 =for html
-<a href="http://travis-ci.org/stevieb9/mock-sub"><img src="https://secure.travis-ci.org/stevieb9/syntax-check.png"/>
+<a href="http://travis-ci.com/stevieb9/syntax-check"><img src="https://www.travis-ci.com/stevieb9/syntax-check.svg?branch=master"/>
 <a href='https://coveralls.io/github/stevieb9/syntax-check?branch=master'><img src='https://coveralls.io/repos/stevieb9/syntax-check/badge.svg?branch=master&service=github' alt='Coverage Status' /></a>
 
 
