@@ -9,6 +9,7 @@ use Data::Dumper;
 use Exporter qw(import);
 use File::Path qw(make_path);
 use File::Temp qw(tempdir);
+use Module::Installed qw(module_installed);
 use PPI;
 
 our $VERSION = '1.05';
@@ -62,7 +63,7 @@ sub check {
             $file .= '.pm';
             my $path = "$dir/$file";
 
-            if (_module_installed($package)) {
+            if (module_installed($package)) {
                 # Skip includes that are actually installed
                 say "Skipping available module '$package'" if $self->{verbose};
                 next;
@@ -111,19 +112,6 @@ sub _create_lib_dir {
         $self->{lib} = tempdir(CLEANUP => $self->{cleanup});
         say "Created temp lib dir '$self->{lib}'" if $self->{verbose};
     }
-}
-sub _module_installed {
-    my ($name) = @_;
-
-    my $name_pm;
-
-    if ($name =~ /\A\w+(?:::\w+)*\z/) {
-        ($name_pm = "$name.pm") =~ s!::!$SEPARATOR!g;
-    } else {
-        $name_pm = $name;
-    }
-
-    return 1 if exists $INC{$name_pm};
 }
 sub __placeholder {}
 
